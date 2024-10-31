@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Slider.css'; // Optional CSS file for styling
+import './Slider.css'; 
 
 const Banner = () => {
     // Image data
