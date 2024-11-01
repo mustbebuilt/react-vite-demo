@@ -1,0 +1,86 @@
+/* Basic resets */
+nav {
+    font-family: Arial, sans-serif;
+}
+
+/* Container styling */
+nav {
+    position: relative;
+    background-color: #333;
+    padding: 0.5em;
+}
+
+menu {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link styling */
+menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+}
+
+menu li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Burger Icon - Hidden on desktop */
+.burger {
+    display: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    nav{
+        padding-bottom:40px;
+    }
+    /* Horizontal menu becomes hidden and burger icon shows */
+    menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background-color: #333;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    menu.active {
+        display: flex;
+        position:absolute;
+        z-index: 1;
+        max-height: 300px;
+    }
+
+    .burger {
+        display: block;
+        color: white;
+        z-index: 2;
+    }
+
+    /* Mobile links */
+    menu li a {
+        padding: 0.5em 1em;
+        border-top: 1px solid #444;
+        display: block;
+    }
+}
