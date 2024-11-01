@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Navbar.css'; 
 
 const Navbar = ({ setActiveComponent }) => {
@@ -22,5 +23,9 @@ const Navbar = ({ setActiveComponent }) => {
         </div>
     );
 }
+
+Navbar.propTypes = {
+    setActiveComponent: PropTypes.func.isRequired,
+};
 
 export default Navbar;

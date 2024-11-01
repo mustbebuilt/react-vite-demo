@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './Slider.css'; 
+import { useEffect, useState, useCallback } from 'react';
+import './Slider.css';
 
 const Banner = () => {
     // Image data
@@ -20,13 +20,13 @@ const Banner = () => {
     };
 
     // Functions for navigation
-    const prevSlide = () => {
+    const prevSlide = useCallback(() => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
+    }, [images.length]);
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+    }, [images.length]);
 
     // Auto-slide
     useEffect(() => {
@@ -34,7 +34,7 @@ const Banner = () => {
             nextSlide();
         }, 5000);
         return () => clearInterval(interval);
-    }, []);
+    }, [nextSlide]);
 
     return (
         <div className="banner-slider">
