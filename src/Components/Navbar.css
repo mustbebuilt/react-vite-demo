@@ -8,7 +8,9 @@ nav {
     position: relative;
     background-color: #333;
     padding: 0.5em;
-    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* padding-bottom: 40px; */
     /* Additional padding for mobile */
 }
 
@@ -20,10 +22,10 @@ nav {
     cursor: pointer;
     background: none;
     border: none;
-    position: absolute;
+    /* position: absolute;
     top: 10px;
     right: 15px;
-    z-index: 2;
+    z-index: 2; */
 }
 
 /* Menu styling for mobile */
