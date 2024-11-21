@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import './Slider.css';
 
 const Banner = () => {
@@ -20,13 +20,13 @@ const Banner = () => {
     };
 
     // Functions for navigation
-    const prevSlide = useCallback(() => {
+    const prevSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    }, [images.length]);
+    };
 
-    const nextSlide = useCallback(() => {
+    const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, [images.length]);
+    };
 
     // Auto-slide
     useEffect(() => {
